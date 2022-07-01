@@ -21,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-u%t5hmy66=&oh!#3l#6_ha_@#8diwv)i&h(j3d1t@mou-n3+e8'
+SECRET_KEY = 'django-insecure-v=(_f55*g0tu(^4o%5rtec78gua9b93ux4myfi1g-5mk1ku^6l'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -72,7 +72,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'mysite.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
@@ -118,7 +117,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = 'django/myapp/static/'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
@@ -128,5 +128,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 MEDIA_URL='/media/'
 MEDIA_ROOT=os.path.join(BASE_DIR,'media/')
 
-RAZOR_KEY_ID = 'rzp_test_6WMqSim8Aew5OG'
-RAZOR_KEY_SECRET = '50hMKmd4K3l19xJbs9h79Aoj'
+RAZOR_KEY_ID = "rzp_test_FHbP2LyyrkWVrj"
+RAZOR_KEY_SECRET = "5Cd3JgUzCKuTy7AgtLVG5aVs"

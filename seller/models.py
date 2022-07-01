@@ -19,7 +19,9 @@ class Product(models.Model):
     price = models.FloatField()
     quantity = models.IntegerField(default=0)
     discount = models.IntegerField()
-    pic = models.FileField(upload_to='products',default='avatar.png')    
+    pic = models.FileField(upload_to='products',default='avatar.png')
+    pic1 = models.FileField(upload_to='products',default='avatar.png')
+    pic2 = models.FileField(upload_to='products',default='avatar.png')    
     discountedprice = models.FloatField(blank=True,null=True)
     
     def __str__(self):

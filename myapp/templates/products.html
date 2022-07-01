@@ -3,62 +3,63 @@
 
 {% block content %}
 
-<!--- products --->
-<div class="products">
+<!-- breadcrumbs -->
+<div class="breadcrumbs">
     <div class="container">
-        <h3 class="w3_agile_header">Products</h3>
-        <div class="about-agileinfo w3layouts">
-            <div class="col-md-12 products-right">
-                <div class="agile_top_brands_grids">
-                    {% for item in productlist %}
-                    <div class="col-md-3 top_brand_left" style="margin-top:50px;">
-                        <div class="hover14 column">
-                            <div class="agile_top_brand_left_grid">
-                                <div class="agile_top_brand_left_grid_pos">
-                                    
-                                </div>
-                                <div class="agile_top_brand_left_grid1">
-                                    <figure>
-                                        <div class="snipcart-item block">
-                                            <div class="snipcart-thumb">
-                                                <a href="{% url 'single' item.id %}">
-                                                    <img title=" " alt=" " src="{{item.pic.url}}" width="150" height="150" />
-                                                </a>
-                                                <p>{{item.name}}</p>
-                                                <h4>₹{{item.price}}<span>₹{{item.price}}</span></h4>
-                                            </div>
-                                            <div class="snipcart-details top_brand_home_details">
-                                                <form action="#" method="post">
-                                                    <fieldset>
-                                                        <input type="hidden" name="cmd" value="_cart">
-                                                        <input type="hidden" name="add" value="1">
-                                                        <input type="hidden" name="business" value=" ">
-                                                        <input type="hidden" name="item_name"
-                                                            value="Fortune Sunflower Oil">
-                                                        <input type="hidden" name="amount" value="35.99">
-                                                        <input type="hidden" name="discount_amount" value="1.00">
-                                                        <input type="hidden" name="currency_code" value="USD">
-                                                        <input type="hidden" name="return" value=" ">
-                                                        <input type="hidden" name="cancel_return" value=" ">
-                                                        <input type="submit" name="submit" value="View Details"
-                                                            class="button">
-                                                    </fieldset>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </figure>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    {% endfor %}
-                    <div class="clearfix"> </div>
-                </div>
-            </div>
-            <div class="clearfix"> </div>
-        </div>
+        <ol class="breadcrumb breadcrumb1 animated wow slideInLeft" data-wow-delay=".5s">
+            <li><a href="{% url 'index' %}"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</a></li>
+            <li class="active" >Products</li>
+        </ol>
     </div>
 </div>
-<!--- products --->
+<div class="products">
+    <div class="container">
+      <div class="col-md-12 products-right">
+        <div class="products-right-grids-bottom">
+        {% for item in products %}
+        <div class="col-md-3 products-right-grids-bottom-grid" style="margin-bottom:20px">
+          <div class="new-collections-grid1 products-right-grid1 animated wow slideInUp" data-wow-delay=".5s">
+            <div class="new-collections-grid1-image">
+              <a href="{% url 'single' item.id %}" class="product-image"><img src="{{item.pic.url}}" alt=" " width="200" height="200" ></a>
+              <div class="new-collections-grid1-image-pos products-right-grids-pos-center" style="left:50px">
+                <a href="{% url 'single' item.id %}" style="align:center">Quick View</a>
+              </div>
+            </div>
+            <h4><a href="{% url 'single' item.id %}">{{item.name}}</a></h4>
+            <p>{{item.des}}</p>
+            <div class="simpleCart_shelfItem products-right-grid1-add-cart">
+              <p><i>₹{{item.price}}</i> <span class="item_price">₹{{item.discountedprice}}</span>   
+            </div>
+          </div>
+        </div>
+        {% endfor %} 
+
+
+                <div class="clearfix"> </div>
+            </div>
+            <nav class="numbering animated wow slideInRight" data-wow-delay=".5s">
+              <ul class="pagination paging">
+                <li>
+                  <a href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                  </a>
+                </li>
+                <li class="active"><a href="#">1<span class="sr-only">(current)</span></a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li>
+                  <a href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+</div>
+<!-- //breadcrumbs -->
 
 {% endblock %}

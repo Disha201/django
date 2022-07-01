@@ -1,0 +1,70 @@
+{% extends 'header.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- breadcrumbs -->
+<div class="breadcrumbs">
+    <div class="container">
+        <ol class="breadcrumb breadcrumb1 animated wow slideInLeft" data-wow-delay=".5s">
+            <li><a href="{% url 'index' %}"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</a></li>
+            <li class="active" >{{search}}</li>
+        </ol>
+    </div>
+</div>
+<div class="products">
+    <div class="container">
+      <div class="col-md-12 products-right">
+        <div class="products-right-grids-bottom">
+    {% for item in products %}
+        {% if item.name.lower == search.lower %}
+    
+        <div class="col-md-3 products-right-grids-bottom-grid" style="margin-bottom:20px">
+          <div class="new-collections-grid1 products-right-grid1 animated wow slideInUp" data-wow-delay=".5s">
+            <div class="new-collections-grid1-image">
+              <a href="{% url 'single' item.id %}" class="product-image"><img src="{{item.pic.url}}" alt=" " width="200" height="200" ></a>
+              <div class="new-collections-grid1-image-pos products-right-grids-pos-center" style="left:50px">
+                <a href="{% url 'single' item.id %}" style="align:center">Quick View</a>
+              </div>
+            </div>
+            
+            <h4><a href="{% url 'single' item.id %}">{{item.name}}</a></h4>
+            <p>{{item.des}}</p>
+            <div class="simpleCart_shelfItem products-right-grid1-add-cart">
+              <p><i>₹{{item.price}}</i> <span class="item_price">₹{{item.discountedprice}}</span>   
+            </div>
+          </div>
+        </div>
+      {% elif search in item.name %} 
+      <div class="col-md-3 products-right-grids-bottom-grid" style="margin-bottom:20px">
+        <div class="new-collections-grid1 products-right-grid1 animated wow slideInUp" data-wow-delay=".5s">
+          <div class="new-collections-grid1-image">
+            <a href="{% url 'single' item.id %}" class="product-image"><img src="{{item.pic.url}}" alt=" " width="200" height="200" ></a>
+            <div class="new-collections-grid1-image-pos products-right-grids-pos-center" style="left:50px">
+              <a href="{% url 'single' item.id %}" style="align:center">Quick View</a>
+            </div>
+          </div>
+          
+          <h4><a href="{% url 'single' item.id %}">{{item.name}}</a></h4>
+          <p>{{item.des}}</p>
+          <div class="simpleCart_shelfItem products-right-grid1-add-cart">
+            <p><i>₹{{item.price}}</i> <span class="item_price">₹{{item.discountedprice}}</span>   
+          </div>
+        </div>
+      </div>
+      {% endif %}
+   
+      {% endfor %} 
+      {% if l == 0%}
+      <h4>Product Not Found</h4>
+      {% endif %}
+
+
+                <div class="clearfix"> </div>
+            </div>
+         
+    </div>
+</div>
+<!-- //breadcrumbs -->
+
+{% endblock %}

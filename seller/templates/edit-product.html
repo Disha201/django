@@ -1,64 +1,104 @@
-{% extends 'seller-header.html' %}
+{% extends 'seller-header.html'%}
 {% load static %}
+
 {% block content %}
-<div class="forms">
-    <div class="row">
-        <h3 class="title1">General Form :</h3>
-        <div class="form-three widget-shadow">
-            <form class="form-horizontal" method="post" enctype="multipart/form-data">
-                {% csrf_token %}
-                <div class="form-group">
-                    <label for="focusedinput" class="col-sm-2 control-label">Product Name</label>
-                    <div class="col-sm-8">
-                        <input type="text" class="form-control1" name="name" value="{{productobj.name}}">
-                    </div>
-                </div>
 
-                <div class="form-group">
-                    <label for="focusedinput" class="col-sm-2 control-label">Description</label>
-                    <div class="col-sm-8">
-                        <input type="text" class="form-control1" name="des" value="{{productobj.des}}">
-                    </div>
-                </div>
 
-                <div class="form-group">
-                    <label for="focusedinput" class="col-sm-2 control-label">Price</label>
-                    <div class="col-sm-8">
-                        <input type="text" class="form-control1" name="price" value="{{productobj.price}}">
-                    </div>
-                </div>
+        <div class="forms" >
+        
+            <div class="row">
+                <h3 class="title1">General Form :</h3>
+                <div class="form-three widget-shadow">
+                    <form class="form-horizontal" method='POST' enctype="multipart/form-data">
+                        {%  csrf_token %}
+                        <div class="form-group">
+                            <label for="focusedinput" class="col-sm-2 control-label">product name</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control1" name='name' id='name' value="{{productobj.name}}" required="">
+                            </div>
+                        </div>
 
-                <div class="form-group">
-                    <label for="focusedinput" class="col-sm-2 control-label">Quantity</label>
-                    <div class="col-sm-8">
-                        <input type="text" class="form-control1" name="quantity"  value="{{productobj.quantity}}">
-                    </div>
-                </div>
+                        <div class="form-group">
+                            <label for="focusedinput" class="col-sm-2 control-label">Description</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control1" name='des' id='des' value="{{productobj.des}}" required="">
+                            </div>
+                        </div>
 
-                <div class="form-group">
-                    <label for="focusedinput" class="col-sm-2 control-label">Discount</label>
-                    <div class="col-sm-8">
-                        <input type="text" class="form-control1" name="discount" value="{{productobj.discount}}">
-                    </div>
-                </div>
+                        <div class="form-group">   
+                            <label for="focusedinput" class="col-sm-2 control-label">Price</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control1" name='price' id='price' value="{{productobj.price}}" required="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="focusedinput" class="col-sm-2 control-label">Quantity</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control1" name='quantity' id='quantity' value="{{productobj.quantity}}" required="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="focusedinput" class="col-sm-2 control-label">Discount</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control1" name='discount' id='discount' value="{{productobj.discount}}" required="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="focusedinput" class="col-sm-2 control-label">Product Image</label>
+                            <div class="col-sm-8">
+                                <input type="file" class="form-control1" name='pic' id='pic' value="{{productobj.pic.url}}" required="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="focusedinput" class="col-sm-2 control-label">Product Image1</label>
+                            <div class="col-sm-8">
+                                <input type="file" class="form-control1" name='pic1' id='pic1' value="{{productobj.pic1.url}}" required="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="focusedinput" class="col-sm-2 control-label">Product Image2</label>
+                            <div class="col-sm-8">
+                                <input type="file" class="form-control1" name='pic2' id='pic2' value="{{productobj.pic2.url}}" required="">
+                            </div>
+                        </div>
+                        <div class="form-group mb-n">
+                                <div class="col-sm-8">
+                                    <input type="submit" id="btn" class="btn btn-info" value="Edit Product">
+                        </div>
 
-                <div class="form-group">
-                    <label for="focusedinput" class="col-sm-2 control-label">Product Image</label>
-                    <div class="col-sm-8">
-                        <input type="file" class="form-control1" name="pic">
-                    </div>
-                </div>
-
-                <div class="form-group mb-n">
-                    <label for="largeinput" class="col-sm-2 control-label label-input-lg">
-                        </label>
-                    <div class="col-sm-8">
-                        <input type="submit" class="btn btn-info" value="Update Product">
-                    </div>
-                </div>
-            </form>
+                    
+                    </form>
+            </div>
+          
         </div>
-    </div>
 
-</div>
+        <script>
+            $(document).ready(function () {
+                $("#btn").click(function (){
+                    
+                    var productobj={
+                        'name':$("#name").val(),
+                        'des':$("#des").val(),
+                        'price':$("#price").val(),
+                        'quantity':$("#quantity").val(),
+                        'discount':$("#discount").val(),
+                        'pic':$("#pic").val(),
+                        'pic1':$("#pic1").val(),
+                        'pic2':$("#pic2").val(),
+                        'csrfmiddlewaretoken':$("input[name='csrfmiddlewaretoken']").val()
+                };
+            $.ajax({
+                    url:"{% url 'edit-product' productobj.id %}",
+                    type:'POST',
+                    data:productobj,
+                    success: function(response) {
+                        alert(response.msg);
+                        window.location.href = "{% url 'manage-products'  %}";
+                    }
+                });
+            });
+        });
+
+    </script>
+
 {% endblock %}

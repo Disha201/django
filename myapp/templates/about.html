@@ -2,123 +2,39 @@
 {% load static %}
 
 {% block content %}
-<!-- breadcrumbs -->
-<div class="breadcrumbs">
-    <div class="container">
-        <ol class="breadcrumb breadcrumb1 animated wow slideInLeft" data-wow-delay=".5s">
-            <li><a href="index.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>Home</a></li>
-            <li class="active">About</li>
-        </ol>
-    </div>
-</div>
-<!-- //breadcrumbs -->
-<!-- about -->
-<div class="about">
-    <div class="container">
-        <h3 class="w3_agile_header">About Us</h3>
-        <div class="about-agileinfo w3layouts">
-            <div class="col-md-8 about-wthree-grids grid-top">
-                <h4>Blanditiis praesentium deleniti atque corrupti quos </h4>
-                <p class="top">Gnissimos voluptatum deleniti atque corrupti quos dolores et quas molestias
-                    excepturi. atque corrupti quos dolores et quas molestias excepturi sint occaecat officia
-                    deserunt mollitia laborum et dolorum fuga</p>
-                <p>Dignissimos at vero eos et accusamus et iusto odio ducimus qui blanditiis praesentium voluptatum
-                    deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecat officia deserunt
-                    mollitia laborum et dolorum fuga. At vero eos et accusamus et iusto odio dignissimos ducimus qui
-                    blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias
-                    excepturi sint occaecat atque corrupti quos dolores et quas molestias excepturi sint occaecat
-                    officia deserunt mollitia laborum et dolorum </p>
-                <div class="about-w3agilerow">
-                    <div class="col-md-4 about-w3imgs">
-                        <img src="images/p3.jpg" alt="" class="img-responsive zoom-img" />
-                    </div>
-                    <div class="col-md-4 about-w3imgs">
-                        <img src="images/p4.jpg" alt="" class="img-responsive zoom-img" />
-                    </div>
-                    <div class="col-md-4 about-w3imgs">
-                        <img src="images/p3.jpg" alt="" class="img-responsive zoom-img" />
-                    </div>
-                    <div class="clearfix"> </div>
-                </div>
-            </div>
-            <div class="col-md-4 about-wthree-grids">
-                <div class="offic-time">
-                    <div class="time-top">
-                        <h4>Praesentium :</h4>
-                    </div>
-                    <div class="time-bottom">
-                        <h5>At vero eos </h5>
-                        <h5>Accusamus et</h5>
-                        <p>Dignissimos at vero eos et accusamus et iusto odio ducimus qui accusamus et. </p>
-                    </div>
-                </div>
-                <div class="testi">
-                    <h3 class="w3_agile_header">Testimonial</h3>
-                    <!--//End-slider-script -->
-                    <script src="js/responsiveslides.min.js"></script>
-                    <script>
-                        // You can also use "$(window).load(function() {"
-                        $(function () {
-                            // Slideshow 5
-                            $("#slider5").responsiveSlides({
-                                auto: true,
-                                pager: false,
-                                nav: true,
-                                speed: 500,
-                                namespace: "callbacks",
-                                before: function () {
-                                    $('.events').append("<li>before event fired.</li>");
-                                },
-                                after: function () {
-                                    $('.events').append("<li>after event fired.</li>");
-                                }
-                            });
 
-                        });
-                    </script>
-                    <div id="top" class="callbacks_container">
-                        <ul class="rslides" id="slider5">
-                            <li>
-                                <div class="testi-slider">
-                                    <h4>" I AM VERY PLEASED.</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eu magna
-                                        dolor, quisque semper.</p>
-                                    <div class="testi-subscript">
-                                        <p><a href="#">John Doe,</a>Adipiscing</p>
-                                        <span class="w3-agilesub"> </span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="testi-slider">
-                                    <h4>" I AM LOREM IPSUM.</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eu magna
-                                        dolor, quisque semper.</p>
-                                    <div class="testi-subscript">
-                                        <p><a href="#">elit semper,</a>Dolor Elit</p>
-                                        <span class="w3-agilesub"> </span>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="testi-slider">
-                                    <h4>" CONSECTETUR PIMAGNA.</h4>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eu magna
-                                        dolor, quisque semper.</p>
-                                    <div class="testi-subscript">
-                                        <p><a href="#">Amet Doe,</a>Suspendisse</p>
-                                        <span class="w3-agilesub"> </span>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
+<!-- mail -->
+<div class="mail animated wow zoomIn" data-wow-delay=".5s">
+    <div class="container">
+        <h2 style="text-align:center"><b>About Us</b></h2>
+        <div class="mail-grids">
+            <div class="col-md-8 mail-grid-left animated wow slideInLeft" data-wow-delay=".5s">
+
+                <h2>Our History</h2>
+                <br>
+                    <p >Etiam faucibus viverra libero vel efficitur. Ut semper nisl ut laoreet ultrices. Maecenas dictum arcu purus, sit amet volutpat purus viverra sit amet. Quisque lacinia quam sed tortor interdum, malesuada congue nunc ornare. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In semper lorem eget tortor pulvinar ultricies.  
+                        Pellentesque sed feugiat sapien. ullamcorper nunc. Aenean eget massa orci. Vivamus vulputate elit at rutrum elementum. Duis sit amet posuere justo, sit amet finibus urna. Aenean elementum diam nec laoreet sodales. Morbi vulputate tempor nisl nec tristique.</p>
+            </div>
+            <div class="col-md-4 mail-grid-right animated wow slideInRight" data-wow-delay=".5s">
+                <div class="mail-grid-right1">
+                    <img src="{% static 'images/3.png' %}" alt=" " class="img-responsive" />
+                    <h4>Rita Williumson <span>Manager</span></h4>
+                    <ul class="phone-mail">
+                        <li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>Phone: +1234 567 893</li>
+                        <li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i>Email: <a href="mailto:info@example.com">info@example.com</a></li>
+                    </ul>
+                    <ul class="social-icons">
+                        <li><a href="#" class="facebook"></a></li>
+                        <li><a href="#" class="twitter"></a></li>
+                        <li><a href="#" class="g"></a></li>
+                        <li><a href="#" class="instagram"></a></li>
+                    </ul>
                 </div>
             </div>
             <div class="clearfix"> </div>
         </div>
+        <iframe class="animated wow slideInLeft" data-wow-delay=".5s" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3098.7638135888296!2d-77.47669308468912!3d39.04350424592369!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b63eb3bc8da92b%3A0x78c8e09ab1cabc90!2sShopping+Plaza%2C+Ashburn%2C+VA+20147%2C+USA!5e0!3m2!1sen!2sin!4v1457602090579" frameborder="0" style="border:0" allowfullscreen></iframe>
     </div>
 </div>
-<!-- //about -->
-
+<!-- //mail -->
 {% endblock %}
